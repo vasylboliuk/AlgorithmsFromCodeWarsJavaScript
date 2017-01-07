@@ -17,3 +17,9 @@ console.log("Basic tests");
 console.log(find_average([1,1,1])===1);
 console.log(find_average([1,2,3])===2);
 console.log(find_average([1,2,3,4])===2.5);
+
+//Solution from Codewars
+function find_average2(array) {
+  var sum = array.reduce((a, b) => a + b, 0);
+  return sum/array.length;
+}
