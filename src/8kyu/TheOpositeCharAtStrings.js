@@ -17,7 +17,7 @@ function isOpposite(s1,s2){
     return false;
   }
   for(var i=0; i<s1.length; i++){
-    if(s1.charAt(i)!=s2.charAt(i) && (s1.charAt(i)===s2.charAt(i).toUpperCase() || 
+    if(s1.charAt(i)!==s2.charAt(i) && (s1.charAt(i)===s2.charAt(i).toUpperCase() || 
         s1.charAt(i).toUpperCase()===s2.charAt(i))){
        count++;
      }
@@ -27,6 +27,14 @@ function isOpposite(s1,s2){
    }else{
      return false;
    }
+}
+
+//Solution from codewars
+function isOpposite2(s1,s2){
+  return s1.split('')
+    .map(c => c === c.toUpperCase() ? c.toLowerCase() : c.toUpperCase())
+    .join('') === s2 && s1 !== '';
+  
 }
 
 console.log("Basic tests");
