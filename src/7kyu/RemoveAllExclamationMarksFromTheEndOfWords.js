@@ -41,7 +41,8 @@ console.log("Basic tests");
 assertEquals(remove("Hi!") , "Hi");
 assertEquals(remove("Hi!!!") ,"Hi");
 assertEquals(remove("!Hi") , "!Hi");
-assertEquals(remove("Hi! Hi!") , "Hi Hi");
+assertEquals(remove3("Hi! Hi!") , "Hi Hi");
+assertEquals(remove3("H!i! H!i!") , "H!i H!i");
 assertEquals(remove2("!!!Hi !!hi!!! !hi") , "!!!Hi !!hi !hi");
 
 
