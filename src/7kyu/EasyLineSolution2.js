@@ -15,47 +15,36 @@ easyLine(0) => 0
 easyLine(1) => 1
 easyLine(4) => 4
 easyLine(50) => 67
+
+My Notes:
+Task: Calculate squera of each number
+1^2+4^2+6^2+4^2+1^2=1+16+36+16+1=70
+
+C=n!/k!(n-k)!
+n=0. 4!/0!(4-0)!=24/24=1*2*3*4/1*1*2*3*4=24/24=1
+n=1. 4!/1!(4-1)!=24/1*(6)=1*2*3*4/1*1*2*3=4
+n=2. 4!/2!(4-2)!=24/2*(2)=1*2*3*4/1*2*1*2=6
+n=3. 4!/3!(4-3)!=24/6*(1)=1*2*3*4/1*2*3*1=4
+n=4. 4!/4!(4-4)!=24/24=1*2*3*4/1=1
 */
-function easyLine(n) {
-    //C=n!/k!(n-k)!
-    var sum = 0;
-    for(var k=0; k<=n; k++){
-        var c = fac(n)/(fac(k)*fac(n-k));
-        console.log("C:n:"+n+"k:"+k+": " + c);
-        c = c*c;
-        sum=sum+c;
-    }
-    console.log("sum: " + sum);
-    console.log("Math.log: " + Math.round(Math.log(sum)));
-    return Math.round(Math.log(sum));
-}
-
-function fac(n){
-    var fac = 1;
+function easyLine(n){
+    
+    var res = 1;
     for(var i=1; i<=n; i++){
-        fac=fac*i;
+        res = res * (n+i) / i;
     }
-    return fac;
+        console.log(res);
+        return Math.round(Math.log(res));
 }
 
-function fac2(n){
-    if(n<=1) return 1;
-    var fac = n*fac2(n-1);
-    return fac;
-}
-
-console.log("Basic tests");
 console.log(easyLine(6));
 
-console.log(fac(170));
-console.log(fac(171));
-//console.log(easyLine(4));
-//testing(easyLine(4), 4);
-//testing(easyLine(7), 8);
-//testing(easyLine(13), 16);
-//testing(easyLine(17), 22);
-//testing(easyLine(19), 24);
-
+testing(easyLine(4), 4);
+testing(easyLine(7), 8);
+testing(easyLine(13), 16);
+testing(easyLine(17), 22);
+testing(easyLine(19), 24);
+console.log(easyLine(250));
 
 function testing(actual, expected){
     console.log(actual===expected);
