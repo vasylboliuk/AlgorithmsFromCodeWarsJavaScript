@@ -14,7 +14,7 @@ Assumptions
 */
 function isPrime(num) {
   var count = 0; 
-  if(num==0 || num==1 || num<0) return false;
+  if(num<2) return false;
   for(var i=2; i<=10; i++){
     if(num%i==0){
       count++;

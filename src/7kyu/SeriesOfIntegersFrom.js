@@ -14,4 +14,9 @@ function generateIntegers(n) {
   return list;
 }
 
+function generateIntegers2(n) {
+  return Array.from({length:n+1}, (_,i)=>i )
+}
+
+
 console.log(generateIntegers(3));
